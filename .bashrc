@@ -137,8 +137,9 @@ fi
 export PATH="$HOME/.tfenv/bin:$PATH"
 
 # Cargo
-. "$HOME/.cargo/env"
-source "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
 
 # mise
 # curl https://mise.run | sh
