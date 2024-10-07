@@ -145,3 +145,8 @@ fi
 # curl https://mise.run | sh
 # echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bashrc
 eval "$(~/.local/bin/mise activate bash)"
+
+# uv for Python
+# https://docs.astral.sh/uv/getting-started/installation/
+# curl -LsSf https://astral.sh/uv/install.sh | sh
+echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrceval "$(uv generate-shell-completion bash)"
