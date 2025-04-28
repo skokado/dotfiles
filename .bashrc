@@ -129,6 +129,8 @@ if [ -f ~/.bash_credentials ]; then
     export GITHUB_TOKEN=$GITHUB_TOKEN
 fi
 
+export PATH="$HOME/go/bin:$PATH"
+
 # --- tools
 
 # tfenv
