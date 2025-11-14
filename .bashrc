@@ -116,12 +116,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH=$HOME/.local/bin:$PATH
+
 export CUDA_HOME=/usr/local/cuda
 
-export AWS_PROFILE=RevComm-dev.RestrictedAdmin
 export AWS_DEFAULT_REGION=ap-northeast-1
 
-export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe' 
+export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
 # Secret environment variables
 if [ -f ~/.bash_credentials ]; then
@@ -132,21 +133,21 @@ fi
 export PATH="$HOME/go/bin:$PATH"
 
 # --- tools
-
-# tfenv
-# git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
-# echo 'export PATH=$PATH:$HOME/.tfenv/bin' >> ~/.bashrc
-export PATH="$HOME/.tfenv/bin:$PATH"
+# golang
+export GOPATH=$HOME/gopath
 
 # Cargo
 if [ -f ~/.cargo/env ]; then
     . "$HOME/.cargo/env"
+    alias 'ca=cargo'
 fi
+
+export TENV_AUTO_INSTALL=true
 
 # mise
 # curl https://mise.run | sh
 # echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bashrc
-# eval "$(~/.local/bin/mise activate bash)"
+eval "$(~/.local/bin/mise activate bash)"
 
 # uv for Python
 # https://docs.astral.sh/uv/getting-started/installation/
