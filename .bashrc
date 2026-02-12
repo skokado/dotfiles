@@ -130,11 +130,12 @@ if [ -f ~/.bash_credentials ]; then
     export GITHUB_TOKEN=$GITHUB_TOKEN
 fi
 
-export PATH="$HOME/go/bin:$PATH"
 
 # --- tools
 # golang
+export GOROOT=$HOME/go
 export GOPATH=$HOME/gopath
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Cargo
 if [ -f ~/.cargo/env ]; then
@@ -153,3 +154,7 @@ eval "$(~/.local/bin/mise activate bash)"
 # https://docs.astral.sh/uv/getting-started/installation/
 # curl -LsSf https://astral.sh/uv/install.sh | sh
 eval "$(uv generate-shell-completion bash)"
+
+# >>>> Vagrant command completion (start)
+. /opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/bash/completion.sh
+# <<<<  Vagrant command completion (end)
