@@ -130,7 +130,6 @@ export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 # Secret environment variables
 if [ -f ~/.bash_credentials ]; then
     . ~/.bash_credentials
-    export GITHUB_TOKEN=$GITHUB_TOKEN
 fi
 
 
@@ -148,6 +147,10 @@ fi
 
 export TENV_AUTO_INSTALL=true
 
+# Terraform provider plugin cache
+# ref. https://dev.classmethod.jp/articles/terraform-provider-plugin-cache-must-use/
+export TF_PLUGIN_CACHE_DIR=$HOME/.terraform.d/plugin-cache
+
 # mise
 # curl https://mise.run | sh
 # echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bashrc
@@ -161,3 +164,12 @@ eval "$(uv generate-shell-completion bash)"
 # >>>> Vagrant command completion (start)
 . /opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/bash/completion.sh
 # <<<<  Vagrant command completion (end)
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
+
+# Added by Antigravity CLI installer
+export PATH="/home/skokado/.local/bin:$PATH"

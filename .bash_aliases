@@ -12,3 +12,5 @@ alias tflock='
 '
 alias docker-compose='docker compose'
 alias vag='vagrant'
+
+alias aws-sso='aws configure sso --profile default'
