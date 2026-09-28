@@ -161,9 +161,6 @@ eval "$(~/.local/bin/mise activate bash)"
 # curl -LsSf https://astral.sh/uv/install.sh | sh
 eval "$(uv generate-shell-completion bash)"
 
-# >>>> Vagrant command completion (start)
-. /opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/bash/completion.sh
-# <<<<  Vagrant command completion (end)
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
